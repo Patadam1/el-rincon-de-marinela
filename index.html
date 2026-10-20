@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>El Rincón de Marinela · Bar Cafetería en Mota del Cuervo</title>
+  <meta name="description" content="Bar cafetería en Mota del Cuervo. Menú del día, desayunos, raciones de toda la vida y smash burgers. Calle Fray Alonso Cano, 16. Tel. 600 27 87 70.">
+  <meta name="theme-color" content="#1d3a2d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="El Rincón de Marinela · Mota del Cuervo">
+  <meta property="og:description" content="Burgers de ciudad, cocina de casa. Menú del día, raciones, smash burgers y tartas caseras.">
+  <meta property="og:image" content="assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo:wdth,wght@62..125,300..900&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    "name": "El Rincón de Marinela",
+    "description": "Bar cafetería con menú del día, raciones, burgers smash y tartas caseras.",
+    "telephone": "+34 600 27 87 70",
+    "servesCuisine": ["Española", "Hamburguesas", "Tapas"],
+    "priceRange": "€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "C. Fray Alonso Cano, 16",
+      "postalCode": "16630",
+      "addressLocality": "Mota del Cuervo",
+      "addressRegion": "Cuenca",
+      "addressCountry": "ES"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 39.5011279, "longitude": -2.8700383 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Wednesday", "Thursday"], "opens": "09:00", "closes": "16:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Wednesday", "Thursday"], "opens": "18:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "09:00", "closes": "16:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/elrincondemarinela/",
+      "https://www.facebook.com/p/El-Rinc%C3%B3n-de-Marinela-61578650065252/"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#menu-hoy">Saltar al menú del día</a>
+
+  <header class="top" data-top>
+    <a class="top__logo" href="#inicio" aria-label="El Rincón de Marinela, inicio">
+      <img src="assets/logo-blanco.svg" alt="" width="160" height="48">
+    </a>
+    <nav class="top__nav" aria-label="Secciones">
+      <a href="#menu-hoy">Menú del día</a>
+      <a href="#carta">Carta</a>
+      <a href="#visita">Horario</a>
+      <a href="#visita" data-maps>Cómo llegar</a>
+    </nav>
+    <span class="sachet-wrap"><a class="sachet sachet--small" href="tel:+34600278770">
+      <span class="sachet__label">Llamar</span>
+    </a></span>
+  </header>
+
+  <main>
+    <!-- La barra: primera pantalla -->
+    <section class="hero counter" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__sign">
+        <img class="hero__logo" src="assets/logo-blanco.svg" alt="Bar · Cafetería El Rincón de Marinela" width="1600" height="480">
+      </div>
+
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <h1 id="hero-title" class="hero__title">
+            <span class="line">Burgers de ciudad.</span>
+            <span class="line">Cocina de casa.</span>
+          </h1>
+          <p class="hero__lead">
+            Bar cafetería en Mota del Cuervo. Menú del día, raciones de toda la vida
+            y smash burgers como las de las cadenas, pero hechas aquí.
+          </p>
+          <div class="hero__actions">
+            <span class="sachet-wrap"><a class="sachet" href="tel:+34600278770">
+              <span class="sachet__label">Llamar</span>
+              <span class="sachet__small">600 27 87 70</span>
+            </a></span>
+            <span class="sachet-wrap"><a class="sachet sachet--sage" href="#" data-maps target="_blank" rel="noopener">
+              <span class="sachet__label">Cómo llegar</span>
+              <span class="sachet__small">Fray Alonso Cano, 16</span>
+            </a></span>
+            <span class="sachet-wrap"><a class="sachet sachet--ghost" href="#carta">
+              <span class="sachet__label">Ver la carta</span>
+              <span class="sachet__small">Con precios</span>
+            </a></span>
+          </div>
+        </div>
+
+        <div class="hero__table">
+          <!-- Posavasos del menú del día -->
+          <article class="coaster coaster--menu coaster--round" id="menu" data-coaster data-drop="hero" aria-labelledby="menu-title">
+            <div class="coaster__inner">
+              <div class="face face--front">
+                <svg class="rim" viewBox="0 0 200 200" aria-hidden="true">
+                  <defs><path id="rim-menu" d="M100,100 m-79,0 a79,79 0 1,1 158,0 a79,79 0 1,1 -158,0"/></defs>
+                  <text><textPath href="#rim-menu" textLength="492">MENÚ DEL DÍA · PRIMERO · SEGUNDO · POSTRE O CAFÉ · CADA DÍA ·</textPath></text>
+                </svg>
+                <div class="face__body">
+                  <h2 class="menu__title" id="menu-title">Menú<br>del día</h2>
+                  <p class="menu__day" data-today>Hoy</p>
+                  <p class="menu__price" data-menu-price hidden></p>
+                  <p class="menu__inc">Primero, segundo y postre o café</p>
+                </div>
+              </div>
+              <div class="face face--back" aria-live="polite">
+                <div class="face__body face__body--list" data-menu-back>
+                  <p class="menu__loading">Cargando el menú de hoy…</p>
+                </div>
+              </div>
+            </div>
+            <button class="coaster__turn" type="button" data-flip aria-pressed="false" aria-controls="menu">
+              <span data-flip-label>Ver los platos de hoy</span>
+            </button>
+          </article>
+
+          <!-- Posavasos cuadrado: horario -->
+          <aside class="coaster coaster--square coaster--hours" data-coaster data-drop="hero" aria-label="Horario de hoy">
+            <div class="coaster__inner">
+              <div class="face face--front">
+                <div class="face__body">
+                  <p class="hours__stamp" data-open-stamp>—</p>
+                  <p class="hours__today" data-open-detail></p>
+                  <a class="hours__link" href="#visita">Horario completo</a>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Posavasos pequeño: Google -->
+          <aside class="coaster coaster--round coaster--small coaster--google" data-coaster data-drop="hero" aria-label="Valoración en Google">
+            <div class="coaster__inner">
+              <div class="face face--front">
+                <div class="face__body">
+                  <p class="google__score">4,2</p>
+                  <p class="google__label">en Google<br>48 opiniones</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menú del día completo -->
+    <section class="hoy counter" id="menu-hoy" aria-labelledby="hoy-title">
+      <div class="hoy__sheet">
+        <div class="hoy__head">
+          <h2 id="hoy-title" class="section-title section-title--ink" data-reveal="words">Menú del día</h2>
+          <p class="hoy__date" data-hoy-date>Hoy</p>
+        </div>
+        <div class="hoy__body" data-hoy-body aria-live="polite">
+          <p class="hoy__empty">Cargando el menú de hoy…</p>
+        </div>
+        <div class="hoy__foot">
+          <div class="hoy__price coaster coaster--round" data-hoy-price hidden>
+            <div class="coaster__inner">
+              <div class="face face--front">
+                <div class="face__body">
+                  <p class="hoy__price-num" data-hoy-price-num></p>
+                  <p class="hoy__price-inc" data-hoy-note>Postre o café incluido</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hoy__actions">
+            <span class="sachet-wrap"><a class="sachet" href="tel:+34600278770">
+              <span class="sachet__label">Llamar</span>
+              <span class="sachet__small">Para reservar o encargar</span>
+            </a></span>
+            <span class="sachet-wrap"><a class="sachet sachet--sage" href="#" data-maps target="_blank" rel="noopener">
+              <span class="sachet__label">Cómo llegar</span>
+              <span class="sachet__small">Fray Alonso Cano, 16</span>
+            </a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- En la barra: las dos cartas -->
+    <section class="barra counter" id="barra" aria-labelledby="barra-title">
+      <div class="section-head">
+        <h2 id="barra-title" data-reveal="words" class="section-title">Dos cartas<br>en una barra</h2>
+        <p class="section-lead" data-reveal="fade">
+          Lo de toda la vida, casero y como siempre. Y lo que antes solo
+          encontrabas en la ciudad: smash, pollo kentucky y burgers con pan brioche negro.
+        </p>
+        <p class="barra__hint" data-hint data-reveal="type">Arrastra los posavasos. Tócalos para darles la vuelta.</p>
+      </div>
+      <div class="barra__field" data-field></div>
+    </section>
+
+    <!-- La carta -->
+    <div class="carta-zone counter">
+    <section class="carta" id="carta" aria-labelledby="carta-title">
+      <div class="carta__head">
+        <h2 id="carta-title" data-reveal="words" class="section-title section-title--ink">La carta</h2>
+        <p class="carta__lead" data-reveal="fade">Cada plato se hace en el momento, con producto fresco y casero. Gracias por tu paciencia.</p>
+        <p class="carta__legend">
+          <span class="tag tag--nuevo">Nuevo</span>
+          <span class="tag tag--reco">Recomendado</span>
+          <span class="ticket ticket--casa">De casa</span>
+          <span class="ticket ticket--ciudad">De ciudad</span>
+        </p>
+      </div>
+      <nav class="rack" aria-label="Categorías de la carta" data-rack>
+        <div class="rack__track" data-rack-track></div>
+      </nav>
+      <div class="carta__list" data-carta></div>
+    </section>
+    </div>
+
+    <!-- Opiniones -->
+    <section class="opiniones counter" aria-labelledby="op-title">
+      <div class="section-head">
+        <h2 id="op-title" data-reveal="words" class="section-title">Lo que dicen<br>en Google</h2>
+        <p class="section-lead" data-reveal="fade">4,2 sobre 5 con 48 opiniones.
+          <a class="link-light" href="https://maps.app.goo.gl/gHz9aJYzG9bYYPPh6" target="_blank" rel="noopener">Léelas todas</a>
+        </p>
+      </div>
+      <div class="napkins" data-napkins></div>
+    </section>
+
+    <!-- Visita -->
+    <section class="visita" id="visita" aria-labelledby="visita-title">
+      <div class="visita__grid">
+        <div class="visita__info">
+          <h2 id="visita-title" data-reveal="words" class="section-title section-title--ink">Pásate</h2>
+          <p class="visita__addr" data-reveal="fade">C. Fray Alonso Cano, 16<br>16630 Mota del Cuervo, Cuenca</p>
+          <div class="visita__actions">
+            <span class="sachet-wrap"><a class="sachet" href="#" data-maps target="_blank" rel="noopener">
+              <span class="sachet__label">Cómo llegar</span>
+              <span class="sachet__small">Abrir en Google Maps</span>
+            </a></span>
+            <span class="sachet-wrap"><a class="sachet sachet--sage" href="tel:+34600278770">
+              <span class="sachet__label">Llamar</span>
+              <span class="sachet__small">Dudas y reservas</span>
+            </a></span>
+          </div>
+          <ul class="visita__notes">
+            <li><strong>Para llevar:</strong> llama, encarga y pasa a recogerlo. Comidas y cenas.</li>          </ul>
+        </div>
+
+        <div class="coaster coaster--square coaster--timetable" data-coaster>
+          <div class="coaster__inner">
+            <div class="face face--front">
+              <div class="face__body">
+                <h3 class="timetable__title">Horario</h3>
+                <table class="timetable" data-timetable>
+                  <caption class="sr-only">Horario semanal</caption>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mapa" data-map>
+        <button class="mapa__load" type="button" data-map-load>
+          <span>Ver el mapa aquí</span>
+          <small>Se cargará Google Maps</small>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot counter">
+    <img class="foot__logo" src="assets/logo-blanco.svg" alt="El Rincón de Marinela" width="1600" height="480" loading="lazy">
+    <p class="foot__tag" data-reveal="fade">Cocina casera con esencia. Un rincón para saborear el momento.</p>
+    <ul class="foot__links">
+      <li><a href="https://www.instagram.com/elrincondemarinela/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.facebook.com/p/El-Rinc%C3%B3n-de-Marinela-61578650065252/" target="_blank" rel="noopener">Facebook</a></li>
+      <li><a href="tel:+34600278770">600 27 87 70</a></li>
+    </ul>
+    <p class="foot__credit">Web hecha por <a href="https://bramia.es" target="_blank" rel="noopener">Bramia</a></p>
+  </footer>
+
+  <!-- Barra fija en el móvil -->
+  <nav class="dock" aria-label="Acciones rápidas">
+    <a class="dock__btn" href="tel:+34600278770">Llamar</a>
+    <a class="dock__btn" href="#" data-maps target="_blank" rel="noopener">Cómo llegar</a>
+    <a class="dock__btn" href="#carta">Carta</a>
+  </nav>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
