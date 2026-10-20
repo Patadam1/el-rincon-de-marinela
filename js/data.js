@@ -30,10 +30,10 @@ window.RINCON = {
   /* Fotos: pon el archivo en assets/fotos/ con este nombre y aparece solo. */
   fotos: {
     smash: "assets/fotos/volcan-de-queso.jpg",
-    burgers: "assets/fotos/burgers.jpg",
+    burgers: "assets/fotos/black-burger.jpg",
     pollo: "assets/fotos/pollo.jpg",
     raciones: "assets/fotos/raciones.jpg",
-    tostas: "assets/fotos/tostas.jpg",
+    tostas: "assets/fotos/bocadillo.jpg",
     tartas: "assets/fotos/tarta-pistacho.jpg",
     desayunos: "assets/fotos/desayunos.jpg"
   },
@@ -44,7 +44,12 @@ window.RINCON = {
     { src: "assets/fotos/volcan-de-queso.jpg", texto: "Smash Volcán de Queso", precio: 10, carta: "smash" },
     { src: "assets/fotos/comedor.jpg", texto: "El comedor" },
     { src: "assets/fotos/nachos.jpg", texto: "Nachos", precio: 10.5, carta: "amantes" },
-    { src: "assets/fotos/tarta-pistacho.jpg", texto: "Tarta de pistacho, casera", precio: 5.5, carta: "postres" }
+    { src: "assets/fotos/tarta-pistacho.jpg", texto: "Tarta de pistacho, casera", precio: 5.5, carta: "postres" },
+    { src: "assets/fotos/black-burger.jpg", texto: "Burger de pan negro", carta: "burgers" },
+    { src: "assets/fotos/paella.jpg", texto: "Paella" },
+    { src: "assets/fotos/bocadillo.jpg", texto: "El Rinconcito", precio: 7, carta: "bocadillos" },
+    { src: "assets/fotos/ensalada-caprese.jpg", texto: "Caprese" },
+    { src: "assets/fotos/sandwich.jpg", texto: "Sándwich de la casa", carta: "sandwich" }
   ],
 
   opiniones: [

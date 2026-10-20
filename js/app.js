@@ -609,6 +609,8 @@
       const name = g.carta ? `<a href="#carta" data-goto="${g.carta}">${esc(g.texto)}</a>` : esc(g.texto);
       f.innerHTML = `<img src="${g.src}" alt="${esc(g.texto)}" decoding="async" draggable="false">
         <figcaption><span>${name}</span>${g.precio ? `<span class="foto__price">${euro(g.precio)}</span>` : ""}</figcaption>`;
+      // si la foto aún no está en assets/fotos/, no se muestra
+      $("img", f).addEventListener("error", () => { f.remove(); sync(); });
       track.append(f);
     });
 
