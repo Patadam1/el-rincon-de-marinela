@@ -31,7 +31,7 @@ window.RINCON = {
   fotos: {
     smash: "assets/fotos/volcan-de-queso.jpg",
     burgers: "assets/fotos/black-burger.jpg",
-    pollo: "assets/fotos/pollo.jpg",
+    pollo: "assets/fotos/fritura.jpg",
     raciones: "assets/fotos/huevos-rotos.jpg",
     tostas: "assets/fotos/tosta-gambas.jpg",
     tartas: "assets/fotos/tarta-pistacho.jpg",
@@ -41,11 +41,13 @@ window.RINCON = {
   /* Fotos de la tira «Pásate a vernos»: añade o quita las que quieras.
      Si una foto no está en assets/fotos/, la tira se la salta. */
   galeria: [
-    "barra.jpg", "black-burger.jpg", "huevos-rotos.jpg", "nachos.jpg", "comedor.jpg", "paella.jpg",
-    "volcan-de-queso.jpg", "ensalada-caprese.jpg", "sandwich.jpg", "gambas-ajillo.jpg", "tosta-gambas.jpg",
-    "ensalada-manzana.jpg", "menu-pescado.jpg", "bocadillo.jpg", "ensalada-salmon.jpg", "menu-carne.jpg",
-    "tarta-pistacho.jpg", "ensalada-marisco.jpg"
+    "barra.jpg", "black-burger.jpg", "oreja.jpg", "nachos.jpg", "comedor.jpg", "burger-pistacho.jpg",
+    "paella.jpg", "patatas-queso.jpg", "volcan-de-queso.jpg", "fritura.jpg", "ensalada-caprese.jpg",
+    "burger-roja.jpg", "huevos-rotos.jpg", "sandwich.jpg", "escalope.jpg", "gambas-ajillo.jpg",
+    "tosta-gambas.jpg", "ensalada-manzana.jpg", "menu-pescado.jpg", "bocadillo.jpg", "ensalada-salmon.jpg",
+    "menu-carne.jpg", "tarta-pistacho.jpg", "ensalada-marisco.jpg"
   ],
+
   opiniones: [
     { texto: "Hamburguesas de gran calidad y sorprende el buen precio que tienen, muy buen trato por parte de los camareros. Un sitio para repetir." },
     { texto: "Excelente oreja, buenísimas croquetas y qué buen tinto de verano de la casa." },
