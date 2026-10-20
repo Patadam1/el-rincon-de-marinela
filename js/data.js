@@ -29,14 +29,23 @@ window.RINCON = {
 
   /* Fotos: pon el archivo en assets/fotos/ con este nombre y aparece solo. */
   fotos: {
-    smash: "assets/fotos/smash.jpg",
+    smash: "assets/fotos/volcan-de-queso.jpg",
     burgers: "assets/fotos/burgers.jpg",
     pollo: "assets/fotos/pollo.jpg",
     raciones: "assets/fotos/raciones.jpg",
     tostas: "assets/fotos/tostas.jpg",
-    tartas: "assets/fotos/tartas.jpg",
+    tartas: "assets/fotos/tarta-pistacho.jpg",
     desayunos: "assets/fotos/desayunos.jpg"
   },
+
+  /* Fotos de la tira «Pásate a vernos»: añade o quita las que quieras. */
+  galeria: [
+    { src: "assets/fotos/barra.jpg", texto: "La barra" },
+    { src: "assets/fotos/volcan-de-queso.jpg", texto: "Smash Volcán de Queso", precio: 10, carta: "smash" },
+    { src: "assets/fotos/comedor.jpg", texto: "El comedor" },
+    { src: "assets/fotos/nachos.jpg", texto: "Nachos", precio: 10.5, carta: "amantes" },
+    { src: "assets/fotos/tarta-pistacho.jpg", texto: "Tarta de pistacho, casera", precio: 5.5, carta: "postres" }
+  ],
 
   opiniones: [
     { texto: "Hamburguesas de gran calidad y sorprende el buen precio que tienen, muy buen trato por parte de los camareros. Un sitio para repetir." },

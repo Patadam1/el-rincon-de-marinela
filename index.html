@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo:wdth,wght@62..125,300..900&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=4">
 
   <script type="application/ld+json">
   {
@@ -208,6 +208,25 @@
       <div class="barra__field" data-field></div>
     </section>
 
+    <!-- Fotos: una tira de fotos sobre la barra -->
+    <section class="fotos counter" aria-labelledby="fotos-title">
+      <div class="section-head">
+        <h2 id="fotos-title" data-reveal="words" class="section-title">Pásate<br>a vernos</h2>
+        <div class="fotos__nav">
+          <p class="section-lead" data-reveal="fade">La barra, el comedor y lo que sale de la cocina.</p>
+          <div class="fotos__btns">
+            <button class="fotos__btn" type="button" data-fotos-prev aria-label="Foto anterior">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <button class="fotos__btn" type="button" data-fotos-next aria-label="Foto siguiente">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="fotos__track" data-fotos tabindex="0" role="region" aria-label="Fotos del bar, desliza para ver más"></div>
+    </section>
+
     <!-- La carta -->
     <div class="carta-zone counter">
     <section class="carta" id="carta" aria-labelledby="carta-title">
@@ -318,7 +337,7 @@
     <a class="dock__btn" href="#carta">Carta</a>
   </nav>
 
-  <script src="js/data.js?v=3"></script>
-  <script src="js/app.js?v=3"></script>
+  <script src="js/data.js?v=4"></script>
+  <script src="js/app.js?v=4"></script>
 </body>
 </html>

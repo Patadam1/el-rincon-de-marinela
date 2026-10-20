@@ -597,6 +597,68 @@
     return "";
   }
 
+  /* ---------- Pásate a vernos: tira de fotos ---------- */
+
+  function buildFotos() {
+    const track = $("[data-fotos]");
+    if (!track || !R.galeria?.length) return;
+    const rot = [-2.2, 1.6, -1, 2.4, -1.8];
+    R.galeria.forEach((g, i) => {
+      const f = el("figure", "foto");
+      f.style.setProperty("--r", rot[i % rot.length] + "deg");
+      const name = g.carta ? `<a href="#carta" data-goto="${g.carta}">${esc(g.texto)}</a>` : esc(g.texto);
+      f.innerHTML = `<img src="${g.src}" alt="${esc(g.texto)}" decoding="async" draggable="false">
+        <figcaption><span>${name}</span>${g.precio ? `<span class="foto__price">${euro(g.precio)}</span>` : ""}</figcaption>`;
+      track.append(f);
+    });
+
+    const prev = $("[data-fotos-prev]");
+    const next = $("[data-fotos-next]");
+    const step = () => (track.querySelector(".foto")?.offsetWidth || 300) + 30;
+    const go = (dir) => track.scrollBy({ left: dir * step(), behavior: reduceMotion ? "auto" : "smooth" });
+    const sync = () => {
+      prev.disabled = track.scrollLeft < 8;
+      next.disabled = track.scrollLeft > track.scrollWidth - track.clientWidth - 8;
+    };
+    prev.addEventListener("click", () => go(-1));
+    next.addEventListener("click", () => go(1));
+    track.addEventListener("scroll", sync, { passive: true });
+    addEventListener("resize", sync, { passive: true });
+    track.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+    });
+    sync();
+
+    // arrastrar con el ratón (en táctil ya se desliza solo)
+    let down = false, startX = 0, startLeft = 0, moved = false;
+    track.addEventListener("pointerdown", (e) => {
+      if (e.pointerType !== "mouse" || e.button !== 0) return;
+      down = true; moved = false; startX = e.clientX; startLeft = track.scrollLeft;
+    });
+    addEventListener("pointermove", (e) => {
+      if (!down) return;
+      const dx = e.clientX - startX;
+      if (!moved && Math.abs(dx) > 5) { moved = true; track.classList.add("is-grabbing"); }
+      if (moved) track.scrollLeft = startLeft - dx;
+    });
+    addEventListener("pointerup", () => {
+      if (!down) return;
+      down = false;
+      if (moved) {
+        track.classList.remove("is-grabbing");
+        // vuelve a encajar en la foto más cercana
+        const s = step();
+        track.scrollTo({ left: Math.round(track.scrollLeft / s) * s, behavior: reduceMotion ? "auto" : "smooth" });
+      }
+    });
+    track.addEventListener("click", (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+
+    // las fotos caen sobre la barra una detrás de otra
+    onFirstView(track, () => $$(".foto", track).map((f, i) => [f,
+      [{ opacity: 0, transform: "translateY(-50px) rotate(-8deg) scale(1.06)" }, { opacity: 1, transform: "none" }],
+      { duration: 900, delay: i * 110 }]), "0px 0px -15% 0px");
+  }
   /* ---------- Servilletas ---------- */
 
   function buildNapkins() {
@@ -859,6 +921,7 @@
   buildBarra();
   buildCarta();
   buildNapkins();
+  buildFotos();
   rimSpin();
   heroIntro();
   revealText();
