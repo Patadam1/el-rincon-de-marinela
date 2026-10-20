@@ -930,7 +930,7 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
 .foto {
   flex: none;
   margin: 0;
-  padding: 12px 12px 0;
+  padding: 10px 10px 34px;
   background: #fbf8f0;
   rotate: var(--r, 0deg);
   scroll-snap-align: start;

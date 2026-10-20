@@ -606,9 +606,7 @@
     R.galeria.forEach((g, i) => {
       const f = el("figure", "foto");
       f.style.setProperty("--r", rot[i % rot.length] + "deg");
-      const name = g.carta ? `<a href="#carta" data-goto="${g.carta}">${esc(g.texto)}</a>` : esc(g.texto);
-      f.innerHTML = `<img src="${g.src}" alt="${esc(g.texto)}"${i > 3 ? ' loading="lazy"' : ""} decoding="async" draggable="false">
-        <figcaption><span>${name}</span>${g.precio ? `<span class="foto__price">${euro(g.precio)}</span>` : ""}</figcaption>`;
+      f.innerHTML = `<img src="assets/fotos/${g}" alt="Foto de El Rincón de Marinela"${i > 3 ? ' loading="lazy"' : ""} decoding="async" draggable="false">`;
       // si la foto aún no está en assets/fotos/, no se muestra
       $("img", f).addEventListener("error", () => { f.remove(); sync(); });
       track.append(f);

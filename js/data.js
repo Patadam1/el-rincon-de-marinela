@@ -41,24 +41,10 @@ window.RINCON = {
   /* Fotos de la tira «Pásate a vernos»: añade o quita las que quieras.
      Si una foto no está en assets/fotos/, la tira se la salta. */
   galeria: [
-    { src: "assets/fotos/barra.jpg", texto: "La barra" },
-    { src: "assets/fotos/black-burger.jpg", texto: "Burger de pan negro", carta: "burgers" },
-    { src: "assets/fotos/huevos-rotos.jpg", texto: "Huevos rotos", precio: 10.5, carta: "raciones" },
-    { src: "assets/fotos/nachos.jpg", texto: "Nachos", precio: 10.5, carta: "amantes" },
-    { src: "assets/fotos/comedor.jpg", texto: "El comedor" },
-    { src: "assets/fotos/paella.jpg", texto: "Paella" },
-    { src: "assets/fotos/volcan-de-queso.jpg", texto: "Smash Volcán de Queso", precio: 10, carta: "smash" },
-    { src: "assets/fotos/ensalada-caprese.jpg", texto: "Tomate y mozzarella", precio: 8.5, carta: "ensaladas" },
-    { src: "assets/fotos/sandwich.jpg", texto: "Sándwich de la casa", carta: "sandwich" },
-    { src: "assets/fotos/gambas-ajillo.jpg", texto: "Gambas al ajillo" },
-    { src: "assets/fotos/tosta-gambas.jpg", texto: "Tosta de gambas", carta: "tostas" },
-    { src: "assets/fotos/ensalada-manzana.jpg", texto: "Ensaladas", carta: "ensaladas" },
-    { src: "assets/fotos/menu-pescado.jpg", texto: "Del menú del día" },
-    { src: "assets/fotos/bocadillo.jpg", texto: "Bocadillo de jamón y tortilla", carta: "bocadillos" },
-    { src: "assets/fotos/ensalada-salmon.jpg", texto: "Ensalada de salmón", carta: "ensaladas" },
-    { src: "assets/fotos/menu-carne.jpg", texto: "Del menú del día" },
-    { src: "assets/fotos/tarta-pistacho.jpg", texto: "Tarta de pistacho, casera", precio: 5.5, carta: "postres" },
-    { src: "assets/fotos/ensalada-marisco.jpg", texto: "Ensalada de marisco", carta: "ensaladas" }
+    "barra.jpg", "black-burger.jpg", "huevos-rotos.jpg", "nachos.jpg", "comedor.jpg", "paella.jpg",
+    "volcan-de-queso.jpg", "ensalada-caprese.jpg", "sandwich.jpg", "gambas-ajillo.jpg", "tosta-gambas.jpg",
+    "ensalada-manzana.jpg", "menu-pescado.jpg", "bocadillo.jpg", "ensalada-salmon.jpg", "menu-carne.jpg",
+    "tarta-pistacho.jpg", "ensalada-marisco.jpg"
   ],
   opiniones: [
     { texto: "Hamburguesas de gran calidad y sorprende el buen precio que tienen, muy buen trato por parte de los camareros. Un sitio para repetir." },
