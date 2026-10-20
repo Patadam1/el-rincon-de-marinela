@@ -740,6 +740,16 @@
         [{ clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0 0 0)" }],
         { duration: 1100, delay: 500, easing: "steps(28, end)" }]]);
     });
+    // estrellas de Google que se rellenan hasta su nota
+    $$("[data-rating]").forEach((r) => {
+      const pct = r.style.getPropertyValue("--pct").trim() || "84%";
+      onFirstView(r, () => [
+        [$(".rating__score", r), [{ opacity: 0, transform: "translateY(14px) scale(.96)" }, { opacity: 1, transform: "none" }], { duration: 700 }],
+        [$(".rating__row--full", r), [{ clipPath: "inset(0 100% 0 0)" }, { clipPath: `inset(0 calc(100% - ${pct}) 0 0)` }],
+          { duration: 1500, delay: 250, easing: "cubic-bezier(.65,0,.35,1)" }],
+        [$(".rating__text", r), [{ opacity: 0 }, { opacity: 1 }], { duration: 600, delay: 900 }]
+      ]);
+    });
     // la carta: sellos que se estampan y platos que entran en cascada, categoría a categoría
     $$(".cat").forEach((cat) => {
       onFirstView(cat, () => [
