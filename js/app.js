@@ -990,4 +990,11 @@
   heroIntro();
   revealText();
   liveCounter();
+
+  // si se llega con un ancla (p. ej. desde el QR de las mesas: /?qr#carta), ir directo a esa sección
+  // cuando ya está montada la carta; el navegador saltaría antes de tiempo.
+  if (location.hash.length > 1) {
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: "auto" }));
+  }
 })();
