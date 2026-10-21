@@ -20,7 +20,7 @@ Es HTML, CSS y JavaScript sin dependencias: se sube tal cual a cualquier hosting
 - **Tira de fotos «Pásate a vernos».** Se edita en `js/data.js` → `galeria` (foto, texto y, si es un plato, precio y categoría de la carta).
 - **Fotos de los posavasos.** Ya tienen foto Smash y Tartas. Para el resto, pon los archivos en `assets/fotos/` con estos nombres y aparecen solos en los posavasos de «Dos cartas en una barra»: `smash.jpg`, `burgers.jpg`, `pollo.jpg`, `raciones.jpg`, `tostas.jpg`, `tartas.jpg` y `desayunos.jpg`. Usa fotos cuadradas de unos 800×800 px.
 - **Menú del día.** Crea la hoja de Google y pega su enlace en `js/data.js` (`menuSheetCsv`). Los pasos están en `menu-del-dia/COMO-ACTUALIZAR.md`.
-- **Dominio.** Cuando lo compréis, cambia en `index.html` `og:image` a la URL absoluta (por ejemplo `https://dominio.es/assets/og.png`); WhatsApp necesita la URL completa para enseñar la vista previa. Añade también `<link rel="canonical">`.
+- **Dominio:** https://elrincondemarinela.com (archivo `CNAME`). DNS en Hostinger apuntando a GitHub Pages.
 - **Por confirmar con el cliente:** precio e ingredientes de La Maldita.
 
 ## Publicar en GitHub Pages
