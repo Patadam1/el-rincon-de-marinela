@@ -278,7 +278,8 @@
     back.innerHTML = `
       ${menu.primeros.length ? `<p class="menu__group">Primeros</p>${list(menu.primeros)}` : ""}
       ${menu.segundos.length ? `<p class="menu__group">Segundos</p>${list(menu.segundos)}` : ""}
-      <p class="menu__foot">${esc(menu.nota || "Postre o café incluido")}${menu.precio ? " · " + esc(precioTxt(menu.precio)) : ""}</p>`;
+      ${menu.precio ? `<p class="menu__back-price">${esc(precioTxt(menu.precio))}</p>` : ""}
+      <p class="menu__foot">${esc(menu.nota || "Postre o café incluido")}</p>`;
     fitMenu();
     addEventListener("resize", fitMenu, { passive: true });
     document.fonts?.ready.then(fitMenu);

@@ -1099,3 +1099,20 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
 .coaster--menu:active .coaster__tilt { scale: 0.985; }
 
 @media (prefers-reduced-motion: reduce) { .coaster--menu .coaster__turn { animation: none; } }
+
+/* precio en el dorso del posavasos del menú: bien grande, como un sello */
+.menu__back-price {
+  justify-self: center;
+  margin: 10px 0 0;
+  padding: 4px 14px;
+  font-weight: 900;
+  font-size: max(1.6em, 1.35rem);
+  line-height: 1.1;
+  font-variation-settings: "wdth" 80;
+  font-variant-numeric: tabular-nums;
+  color: var(--board);
+  background: var(--ink);
+  border-radius: 999px;
+  rotate: -3deg;
+}
+.menu__back-price + .menu__foot { margin-top: 6px; }
