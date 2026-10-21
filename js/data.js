@@ -220,8 +220,8 @@ window.CARTA = [
   {
     id: "bebidas", nombre: "Refrescos y cervezas", sub: "", origen: "casa",
     items: [
-      ["Refrescos", 2.5], ["Tinto de verano", 3], ["Tinto de verano de la casa", 5],
-      ["Estrella Galicia", 2.5], ["Tercio Mahou verde", 2.5], ["Tercio Mahou 5 Estrellas", 2.7],
+      ["Refrescos", 2.5], ["Tinto de verano", 3], ["Tinto casero", 4], ["Tinto de verano de la casa", 5],
+      ["Estrella Galicia", "1,50 / 2,50"], ["Mahou Verde (caña/copa)", 2.5], ["Tercio Mahou verde", 2.5], ["Tercio Mahou 5 Estrellas", 2.7],
       ["Tercio sin alcohol", 2.5], ["Tostada 0,0", 2.5], ["Alhambra", 3], ["Corona", 3],
       ["Radler", 2.5], ["Mixta", 2.5]
     ]
