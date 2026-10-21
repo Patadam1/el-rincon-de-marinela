@@ -995,6 +995,6 @@
   // cuando ya está montada la carta; el navegador saltaría antes de tiempo.
   if (location.hash.length > 1) {
     const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: "auto" }));
+    if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: "instant" }));
   }
 })();
