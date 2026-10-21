@@ -632,6 +632,7 @@
     $("[data-bdm-month]", sec).textContent = mes[0].toUpperCase() + mes.slice(1);
     const img = $("[data-bdm-img]", sec);
     img.src = b.foto;
+    if (b.encuadre) img.style.objectPosition = b.encuadre;
     img.alt = `Burger ${b.nombre}`;
     if (b.carta) $("[data-bdm-carta]", sec).dataset.goto = b.carta;
     sec.hidden = false;

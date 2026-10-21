@@ -40,11 +40,12 @@ window.RINCON = {
 
   /* Burger del mes: cámbiala cada mes. Para ocultar la sección, pon burgerDelMes: null. */
   burgerDelMes: {
-    nombre: "Pistacho",
-    descripcion: "Doble smash de vacuno, doble cheddar, beicon y crema de pistacho.",
-    precio: 10,
-    foto: "assets/fotos/burger-pistacho.jpg",
-    carta: "smash"
+    nombre: "La Maldita",
+    descripcion: "Pan negro, cheddar fundido y beicon. La de Halloween, solo este mes.",
+    precio: null,
+    foto: "assets/fotos/black-burger.jpg",
+    encuadre: "50% 60%", // qué parte de la foto se ve (horizontal vertical)
+    carta: "burgers"
   },
 
   /* Fotos de la tira «Pásate a vernos»: añade o quita las que quieras.
