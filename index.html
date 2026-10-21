@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo:wdth,wght@62..125,300..900&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=11">
+  <link rel="stylesheet" href="css/styles.css?v=12">
 
   <script type="application/ld+json">
   {
@@ -195,6 +195,36 @@
       </div>
     </section>
 
+    <!-- Burger del mes (se rellena desde js/data.js; si no hay, no se muestra) -->
+    <section class="bdm counter" id="burger-del-mes" aria-labelledby="bdm-title" data-bdm hidden>
+      <div class="bdm__grid">
+        <div class="bdm__photo">
+          <figure class="bdm__print"><img data-bdm-img alt="" decoding="async"></figure>
+          <svg class="bdm__seal" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="bdm-ring" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+            <circle cx="100" cy="100" r="96"/>
+            <text><textPath href="#bdm-ring" textLength="462" data-bdm-ring>BURGER DEL MES · BURGER DEL MES · </textPath></text>
+            <text class="bdm__seal-month" x="100" y="108" text-anchor="middle" data-bdm-month></text>
+          </svg>
+        </div>
+        <div class="bdm__copy">
+          <h2 class="bdm__name" id="bdm-title"><span class="sr-only">Burger del mes: </span><span data-bdm-name></span></h2>
+          <p class="bdm__desc" data-bdm-desc></p>
+          <p class="bdm__price" data-bdm-price></p>
+          <div class="bdm__actions">
+            <span class="sachet-wrap"><a class="sachet" href="tel:+34600278770">
+              <span class="sachet__label">Llamar</span>
+              <span class="sachet__small">Para reservar o encargar</span>
+            </a></span>
+            <span class="sachet-wrap"><a class="sachet sachet--ghost" href="#carta" data-bdm-carta>
+              <span class="sachet__label">Ver la carta</span>
+              <span class="sachet__small">Todas las burgers</span>
+            </a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- En la barra: las dos cartas -->
     <section class="barra counter" id="barra" aria-labelledby="barra-title">
       <div class="section-head">
@@ -337,7 +367,7 @@
     <a class="dock__btn" href="#carta">Carta</a>
   </nav>
 
-  <script src="js/data.js?v=11"></script>
-  <script src="js/app.js?v=11"></script>
+  <script src="js/data.js?v=12"></script>
+  <script src="js/app.js?v=12"></script>
 </body>
 </html>

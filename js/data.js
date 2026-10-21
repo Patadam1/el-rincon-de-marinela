@@ -38,6 +38,15 @@ window.RINCON = {
     desayunos: "assets/fotos/desayunos.jpg"
   },
 
+  /* Burger del mes: cámbiala cada mes. Para ocultar la sección, pon burgerDelMes: null. */
+  burgerDelMes: {
+    nombre: "Pistacho",
+    descripcion: "Doble smash de vacuno, doble cheddar, beicon y crema de pistacho.",
+    precio: 10,
+    foto: "assets/fotos/burger-pistacho.jpg",
+    carta: "smash"
+  },
+
   /* Fotos de la tira «Pásate a vernos»: añade o quita las que quieras.
      Si una foto no está en assets/fotos/, la tira se la salta. */
   galeria: [

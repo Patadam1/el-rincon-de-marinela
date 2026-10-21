@@ -617,6 +617,36 @@
     return "";
   }
 
+  /* ---------- Burger del mes ---------- */
+
+  const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+
+  function buildBdm() {
+    const b = R.burgerDelMes;
+    const sec = $("[data-bdm]");
+    if (!b || !sec) return;
+    const mes = MESES[madridNow().m - 1];
+    $("[data-bdm-name]", sec).textContent = b.nombre;
+    $("[data-bdm-desc]", sec).textContent = b.descripcion || "";
+    $("[data-bdm-price]", sec).textContent = b.precio ? euro(b.precio) : "";
+    $("[data-bdm-month]", sec).textContent = mes[0].toUpperCase() + mes.slice(1);
+    const img = $("[data-bdm-img]", sec);
+    img.src = b.foto;
+    img.alt = `Burger ${b.nombre}`;
+    if (b.carta) $("[data-bdm-carta]", sec).dataset.goto = b.carta;
+    sec.hidden = false;
+
+    onFirstView(sec, () => [
+      [$(".bdm__print", sec), [{ opacity: 0, transform: "translateY(-70px) rotate(-10deg) scale(1.08)" }, { opacity: 1, transform: "none" }], { duration: 1000 }],
+      [$(".bdm__seal", sec), [{ opacity: 0, transform: "scale(2.2) rotate(-40deg)" }, { opacity: 1, transform: "scale(.92)", offset: 0.7 }, { opacity: 1, transform: "none" }],
+        { duration: 600, delay: 700, easing: "cubic-bezier(.3,0,.5,1)" }],
+      [$(".bdm__name", sec), [{ opacity: 0, transform: "translateY(30px)", filter: "blur(8px)" }, { opacity: 1, transform: "none", filter: "blur(0)" }], { duration: 900, delay: 200 }],
+      [$(".bdm__desc", sec), [{ opacity: 0, transform: "translateY(14px)" }, { opacity: 1, transform: "none" }], { duration: 700, delay: 420 }],
+      [$(".bdm__price", sec), [{ opacity: 0, transform: "scale(1.8) rotate(-12deg)" }, { opacity: 1, transform: "scale(.94)", offset: 0.7 }, { opacity: 1, transform: "none" }],
+        { duration: 500, delay: 650, easing: "cubic-bezier(.3,0,.5,1)" }],
+      ...$$(".bdm__actions .sachet-wrap", sec).map((a, i) => [a, [{ opacity: 0, transform: "translateY(12px)" }, { opacity: 1, transform: "none" }], { duration: 500, delay: 850 + i * 80 }])
+    ], "0px 0px -15% 0px");
+  }
   /* ---------- Pásate a vernos: tira de fotos ---------- */
 
   function buildFotos() {
@@ -942,6 +972,7 @@
   buildCarta();
   buildNapkins();
   buildFotos();
+  buildBdm();
   rimSpin();
   heroIntro();
   revealText();
