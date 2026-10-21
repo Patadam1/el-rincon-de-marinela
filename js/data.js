@@ -35,7 +35,7 @@ window.RINCON = {
     raciones: "assets/fotos/huevos-rotos.jpg",
     tostas: "assets/fotos/tosta-gambas.jpg",
     tartas: "assets/fotos/tarta-pistacho.jpg",
-    desayunos: "assets/fotos/desayunos.jpg"
+    desayunos: "assets/fotos/desayunos-posavasos.jpg"
   },
 
   /* Burger del mes: cámbiala cada mes. Para ocultar la sección, pon burgerDelMes: null. */
@@ -52,7 +52,7 @@ window.RINCON = {
   /* Fotos de la tira «Pásate a vernos»: añade o quita las que quieras.
      Si una foto no está en assets/fotos/, la tira se la salta. */
   galeria: [
-    "barra.jpg", "black-burger.jpg", "oreja.jpg", "nachos.jpg", "comedor.jpg", "burger-pistacho.jpg",
+    "barra.jpg", "black-burger.jpg", "oreja.jpg", "nachos.jpg", "comedor.jpg", "desayunos.jpg", "burger-pistacho.jpg",
     "paella.jpg", "patatas-queso.jpg", "volcan-de-queso.jpg", "fritura.jpg", "ensalada-caprese.jpg",
     "burger-roja.jpg", "huevos-rotos.jpg", "sandwich.jpg", "escalope.jpg", "gambas-ajillo.jpg",
     "tosta-gambas.jpg", "ensalada-manzana.jpg", "menu-pescado.jpg", "bocadillo.jpg", "ensalada-salmon.jpg",
@@ -187,21 +187,43 @@ window.CARTA = [
     items: [
       ["Tartas caseras", 5.5, "Queso y chocolate blanco, de la abuela, Lotus, pistacho, Pantera Rosa, Oreo, mango y fruta de la pasión, fresa o 3 chocolates"],
       ["Culan", 5.5, "Chocolate, chocolate blanco o pistacho"], ["Bizcochada", 5.5], ["Natillas", 5.5],
-      ["Tiramisú", 5.5], ["Arroz con leche", 5.5], ["Helado", 5.5, "Vainilla, Lotus o turrón"],
-      ["Crepes, tortitas y gofres", 3.5, "Chocolate, chocolate blanco, Kinder, pistacho, Lotus, caramelo o fresa"],
-      ["Croissant premium", 3.5, "Chocolate, chocolate blanco, Kinder, pistacho, Lotus, caramelo o fresa"],
-      ["Miguelitos", 2]
+      ["Tiramisú", 5.5], ["Arroz con leche", 5.5], ["Helado", 5.5, "Vainilla, Lotus o turrón"]
     ]
   },
   {
-    id: "bebidas", nombre: "Bebidas y cafés", sub: "", origen: "casa",
+    id: "desayunos", nombre: "Desayunos y meriendas", sub: "Desde las 9:00", origen: "casa",
+    nota: "Y también magdalenas, dónuts…",
     items: [
-      ["Café solo, americano o cortado", 1.3], ["Café con leche", 1.5], ["Infusiones", 1.5],
-      ["Refrescos", 2.5], ["Zumos", 2.5], ["Agua 0,5 l", 1.5], ["Agua 1,5 l", 3],
-      ["Tinto de verano", 3], ["Tinto casero", 4], ["Tinto de verano de la casa", 5],
-      ["Estrella Galicia", "1,50 / 2,50"], ["Mahou Verde (caña/copa)", 2.5], ["Mahou Verde", 2.7],
-      ["Mahou 5 Estrellas", 2.5], ["Cerveza sin alcohol", 2.5], ["Tostada 0,0", 2.5],
-      ["Alhambra", 3], ["Corona", 3], ["Radler", 2.5]
+      ["Tostada de mermelada", 1.8, "Fresa o melocotón"], ["Tostada de tomate", 1.8], ["Tostada de aceite", 1.8],
+      ["Tostada de tomate y jamón", 2.8],
+      ["Croissant a la plancha", 2],
+      ["Croissant premium", 3.5, "Pistacho, Lotus, chocolate blanco, Kinder, caramelo, fresa o chocolate"],
+      ["Crepes, tortitas y gofres", 3.5, "Pistacho, Lotus, chocolate blanco, Kinder, caramelo, fresa o chocolate"],
+      ["Miguelitos", 2.5]
+    ]
+  },
+  {
+    id: "cafes", nombre: "Cafés y zumos", sub: "", origen: "casa",
+    items: [
+      ["Café solo", 1.3], ["Americano", 1.3], ["Cortado", 1.3], ["Café con leche", 1.5], ["Infusiones", 1.5],
+      ["Colacao", 2], ["Batido de chocolate o vainilla", 2.5],
+      ["Zumo de naranja natural", 3], ["Zumo de piña, melocotón o naranja", 2.5],
+      ["Agua 0,5 l", 1.5], ["Agua 1,5 l", 3]
+    ]
+  },
+  {
+    id: "granizados", nombre: "Granizados", sub: "", origen: "casa",
+    items: [
+      ["Limón", 2.5], ["Horchata", 2.5], ["Café", 2.8], ["Café descafeinado", 2.8], ["Blanco y negro", 4.5]
+    ]
+  },
+  {
+    id: "bebidas", nombre: "Refrescos y cervezas", sub: "", origen: "casa",
+    items: [
+      ["Refrescos", 2.5], ["Tinto de verano", 3], ["Tinto de verano de la casa", 5],
+      ["Estrella Galicia", 2.5], ["Tercio Mahou verde", 2.5], ["Tercio Mahou 5 Estrellas", 2.7],
+      ["Tercio sin alcohol", 2.5], ["Tostada 0,0", 2.5], ["Alhambra", 3], ["Corona", 3],
+      ["Radler", 2.5], ["Mixta", 2.5]
     ]
   }
 ];
@@ -220,6 +242,6 @@ window.POSAVASOS = [
     dorso: "Kentucky en cono, fingers, crunchy combo con tres salsas y la Crispy Royale." },
   { id: "tostas", titulo: "Tostas", origen: "casa", carta: "tostas", forma: "redondo", desde: 8,
     dorso: "Matrimonio, salmón, boquerón… y bocadillos de los de antes, como El Rinconcito." },
-  { id: "desayunos", titulo: "Desayunos", origen: "casa", carta: "bebidas", forma: "cuadrado", desde: null,
+  { id: "desayunos", titulo: "Desayunos", origen: "casa", carta: "desayunos", forma: "cuadrado", desde: 1.8,
     dorso: "Desde las 9:00: café, tostadas, croissants premium, crepes y gofres." }
 ];

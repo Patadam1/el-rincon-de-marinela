@@ -537,7 +537,7 @@
 
   /* ---------- La carta ---------- */
 
-  const CHIP_NAMES = { amantes: "Para compartir", bebidas: "Bebidas" };
+  const CHIP_NAMES = { amantes: "Para compartir", desayunos: "Desayunos", bebidas: "Refrescos" };
 
   function buildCarta() {
     const list = $("[data-carta]");

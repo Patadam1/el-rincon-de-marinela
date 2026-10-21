@@ -21,10 +21,7 @@ Es HTML, CSS y JavaScript sin dependencias: se sube tal cual a cualquier hosting
 - **Fotos de los posavasos.** Ya tienen foto Smash y Tartas. Para el resto, pon los archivos en `assets/fotos/` con estos nombres y aparecen solos en los posavasos de «Dos cartas en una barra»: `smash.jpg`, `burgers.jpg`, `pollo.jpg`, `raciones.jpg`, `tostas.jpg`, `tartas.jpg` y `desayunos.jpg`. Usa fotos cuadradas de unos 800×800 px.
 - **Menú del día.** Crea la hoja de Google y pega su enlace en `js/data.js` (`menuSheetCsv`). Los pasos están en `menu-del-dia/COMO-ACTUALIZAR.md`.
 - **Dominio.** Cuando lo compréis, cambia en `index.html` `og:image` a la URL absoluta (por ejemplo `https://dominio.es/assets/og.png`); WhatsApp necesita la URL completa para enseñar la vista previa. Añade también `<link rel="canonical">`.
-- **Por confirmar con el cliente:**
-  - Nombre exacto de la burger nº 6, que he puesto como «Buey Moteña».
-  - Si La Viciosa, Red Burguer y la tosta de gambón siguen en carta; ahora no aparecen.
-  - Carta de desayunos y meriendas con precios.
+- **Por confirmar con el cliente:** precio e ingredientes de La Maldita.
 
 ## Publicar en GitHub Pages
 
