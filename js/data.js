@@ -13,7 +13,7 @@ window.RINCON = {
   /* Menú del día.
      Pega aquí el enlace CSV publicado de la hoja de Google (ver menu-del-dia/COMO-ACTUALIZAR.md).
      Mientras esté vacío, la web usa menu-del-dia/hoy.json. */
-  menuSheetCsv: "",
+  menuSheetCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSLXt6lZ2H7Hr-pXo8klZl_9g41OG-XMD9t_xYkv1DX4pxn3HV0y7LniU941vav070Qop7i-wZ_nhNq/pub?gid=1134432634&single=true&output=csv",
   menuFallback: "menu-del-dia/hoy.json",
 
   /* Horario. 0 = domingo … 6 = sábado. "cierre" = hasta que cierren. Martes cerrado. */
