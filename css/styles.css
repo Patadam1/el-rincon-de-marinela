@@ -1040,3 +1040,26 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
   .bdm__photo { width: min(88%, 460px); margin-top: 20px; }
   .bdm__seal { right: -8%; top: -14%; }
 }
+
+/* Burger del mes · estilo Halloween */
+.bdm--halloween .bdm__name {
+  font-family: "Creepster", var(--display);
+  font-size: clamp(3.6rem, 9vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  color: #ff8a1f;
+  text-shadow: 0 4px 0 #6b2600, 0 10px 24px rgb(0 0 0 / 0.45);
+  animation: maldita-flicker 7s infinite;
+}
+.bdm--halloween .bdm__seal circle { fill: #120d09; stroke: #ff8a1f; }
+.bdm--halloween .bdm__seal .bdm__seal-month { fill: #ff8a1f; }
+.bdm--halloween .bdm__print { rotate: -5deg; }
+/* parpadeo de bombilla vieja, de vez en cuando */
+@keyframes maldita-flicker {
+  0%, 91%, 100% { opacity: 1; }
+  92% { opacity: 0.35; }
+  93% { opacity: 1; }
+  95% { opacity: 0.5; }
+  96% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .bdm--halloween .bdm__name { animation: none; } }

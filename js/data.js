@@ -41,6 +41,7 @@ window.RINCON = {
   /* Burger del mes: cámbiala cada mes. Para ocultar la sección, pon burgerDelMes: null. */
   burgerDelMes: {
     nombre: "La Maldita",
+    estilo: "halloween", // quita esta línea en noviembre
     descripcion: "Pan negro, cheddar fundido y beicon. La de Halloween, solo este mes.",
     precio: null,
     foto: "assets/fotos/black-burger.jpg",

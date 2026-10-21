@@ -627,6 +627,17 @@
     if (!b || !sec) return;
     const mes = MESES[madridNow().m - 1];
     $("[data-bdm-name]", sec).textContent = b.nombre;
+    // estilos de temporada para el nombre (por ahora: "halloween")
+    if (b.estilo) {
+      sec.classList.add(`bdm--${b.estilo}`);
+      const fuentes = { halloween: "Creepster" };
+      if (fuentes[b.estilo]) {
+        const l = document.createElement("link");
+        l.rel = "stylesheet";
+        l.href = `https://fonts.googleapis.com/css2?family=${fuentes[b.estilo]}&display=swap`;
+        document.head.append(l);
+      }
+    }
     $("[data-bdm-desc]", sec).textContent = b.descripcion || "";
     $("[data-bdm-price]", sec).textContent = b.precio ? euro(b.precio) : "";
     $("[data-bdm-month]", sec).textContent = mes[0].toUpperCase() + mes.slice(1);
