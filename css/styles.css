@@ -1063,3 +1063,39 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
   96% { opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) { .bdm--halloween .bdm__name { animation: none; } }
+
+/* Botón del menú del día: más visible, y todo el posavasos se puede pulsar */
+.coaster--menu .coaster__turn {
+  display: inline-flex; align-items: center; gap: 10px;
+  bottom: -26px;
+  padding: 16px 24px 16px 26px;
+  min-height: 56px;
+  font-size: 0.98rem;
+  color: var(--board);
+  background: var(--ink);
+  border: 2px solid var(--sage-light);
+  box-shadow: 0 0 0 5px rgb(195 214 201 / 0.18), 0 12px 24px -8px rgb(6 18 12 / 0.7);
+  animation: turn-nudge 4.5s var(--ease-out) 2.4s infinite;
+}
+.coaster__turn-arrow { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; transition: transform 200ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .coaster--menu .coaster__turn:hover { background: #24382d; }
+  .coaster--menu .coaster__turn:hover .coaster__turn-arrow { transform: translateX(4px); }
+}
+.coaster--menu.is-flipped .coaster__turn-arrow { transform: rotate(180deg); }
+/* cada pocos segundos el botón da un pequeño salto para llamar la atención */
+@keyframes turn-nudge {
+  0%, 82%, 100% { transform: none; }
+  86% { transform: translateY(-6px); }
+  90% { transform: none; }
+  94% { transform: translateY(-3px); }
+}
+.coaster--menu.is-flipped .coaster__turn { animation: none; }
+
+/* el posavasos entero responde al tocarlo */
+.coaster--menu .coaster__inner { cursor: pointer; }
+.coaster--menu .coaster__tilt { transition: scale 300ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .coaster--menu:hover .coaster__tilt { scale: 1.025; } }
+.coaster--menu:active .coaster__tilt { scale: 0.985; }
+
+@media (prefers-reduced-motion: reduce) { .coaster--menu .coaster__turn { animation: none; } }
