@@ -184,7 +184,27 @@
     return rows;
   }
 
+  /* Respuestas de un Formulario de Google: una fila por envío, vale la última.
+     Columnas: Marca temporal · Primeros · Segundos · Precio · Nota (un plato por línea). */
+  function menuFromForm(rows) {
+    const head = rows[0].map((h) => h.trim().toLowerCase());
+    const col = (...keys) => head.findIndex((h) => keys.some((k) => h.includes(k)));
+    const c = { t: col("marca temporal", "timestamp"), p1: col("primer"), p2: col("segund"), pr: col("precio"), n: col("nota") };
+    const last = rows.slice(1).reverse().find((r) => r.some((v) => v.trim()));
+    if (!last) return null;
+    const get = (i) => (i >= 0 ? (last[i] || "").trim() : "");
+    const dishes = (i) => get(i).split(/\r?\n|;/).map((d) => d.replace(/^[-•·*\d.)\s]+/, "").trim()).filter(Boolean);
+    return {
+      fecha: get(c.t).split(/[ ,]/)[0], // «21/10/2026 9:05:12» → «21/10/2026»
+      precio: get(c.pr),
+      primeros: dishes(c.p1),
+      segundos: dishes(c.p2),
+      nota: get(c.n)
+    };
+  }
+
   function menuFromRows(rows) {
+    if (rows[0]?.some((h) => /marca temporal|timestamp/i.test(h))) return menuFromForm(rows);
     const m = { fecha: "", precio: "", primeros: [], segundos: [], nota: "" };
     rows.forEach(([tipo = "", plato = ""]) => {
       const t = tipo.trim().toLowerCase();

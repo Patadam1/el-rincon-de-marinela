@@ -1,37 +1,57 @@
-# Menú del día: cómo lo actualizan ellos
+# Menú del día: cómo lo actualiza el bar
 
-La web lee el menú de una **hoja de Google Sheets**. El bar la edita desde el móvil cada mañana y la web lo muestra sola. No hace falta tocar código ni avisar a Bramia.
+El bar rellena un **Formulario de Google** desde el móvil cada mañana. La web lee el último envío y lo muestra sola, sin tocar código ni avisar a Bramia.
 
-## Preparación (una sola vez, la hace Bramia)
+## Preparación (una sola vez, la hace Bramia, unos 10 minutos)
 
-1. Con la cuenta de Google del bar, crea una hoja nueva en Google Sheets. Llámala, por ejemplo, «Menú del día · El Rincón».
-2. Copia en ella el contenido de `plantilla-hoja.csv`, en dos columnas: **A = tipo** y **B = plato**.
-3. Menú **Archivo → Compartir → Publicar en la web**:
-   - En «Enlace», elige la hoja (Hoja 1) y el formato **Valores separados por comas (.csv)**.
-   - Pulsa **Publicar** y copia el enlace que te da.
-4. Pega ese enlace en `js/data.js`, en `menuSheetCsv: "…"`, y sube el cambio.
-5. Comparte la hoja con el móvil de la dueña (Compartir → con permiso de **Editor**) e instálale la app de Google Sheets.
+### 1. Crear el formulario
+1. Entra en **forms.google.com** con la cuenta de Google del bar (o una de Bramia) y crea un **formulario en blanco**.
+2. Título: «Menú del día · El Rincón de Marinela».
+3. Añade estas 4 preguntas, **con estos nombres exactos**:
 
-## Cada día (lo hace el bar, en 1 minuto)
+   | Pregunta | Tipo | ¿Obligatoria? |
+   |---|---|---|
+   | **Primeros** | Párrafo | Sí |
+   | **Segundos** | Párrafo | Sí |
+   | **Precio** | Respuesta corta | No |
+   | **Nota** | Respuesta corta | No |
 
-Abren la hoja en la app de Google Sheets y cambian solo la columna B:
+   En la descripción de Primeros y Segundos pon: «Un plato por línea».
+4. En **Configuración**, desactiva «Recopilar correos electrónicos» y «Limitar a 1 respuesta», para que se pueda enviar todos los días sin iniciar sesión.
 
-| tipo    | plato                          |
-|---------|--------------------------------|
-| fecha   | 21/10/2026                     |
-| precio  | 12,50                          |
-| primero | Lentejas estofadas             |
-| primero | Ensalada de la casa            |
-| segundo | Pollo asado con patatas        |
-| segundo | Merluza a la plancha           |
-| nota    | Postre o café incluido         |
+### 2. Conectarlo con una hoja
+1. Pestaña **Respuestas** → **Vincular con Hojas de cálculo** → **Crear una hoja nueva**.
+2. En la hoja: **Archivo → Configuración → Configuración regional: España**. Así la fecha sale como 21/10/2026.
 
-- Pueden poner tantas filas de **primero** y **segundo** como quieran.
-- **fecha** es importante: si pone otro día que no es hoy, la web no enseña platos viejos. En su lugar dice que aún no se ha subido el menú y manda a las historias de Instagram o a llamar.
-- Si dejan **precio** vacío, la web no muestra precio.
+### 3. Publicar la hoja para la web
+1. En la hoja: **Archivo → Compartir → Publicar en la web**.
+2. Elige la pestaña **Respuestas de formulario 1** y el formato **Valores separados por comas (.csv)**.
+3. Pulsa **Publicar** y copia el enlace.
+4. Pega el enlace en `js/data.js`, en `menuSheetCsv: "…"`, y sube el cambio. Si se lo pasas a Claude, lo hace él.
+
+### 4. Darle el formulario al bar
+1. En el formulario, pulsa **Enviar → icono de enlace → Acortar URL** y copia el enlace.
+2. Mándaselo al encargado con el mensaje de abajo.
+
+## Mensaje para el bar (copiar y pegar en WhatsApp)
+
+> ¡Hola! Para cambiar el **menú del día** en la web:
+>
+> 1. Abre este enlace: [ENLACE DEL FORMULARIO]
+> 2. Escribe los **primeros** y los **segundos**, **uno por línea**.
+> 3. Pon el precio si quieres y pulsa **Enviar**.
+>
+> En unos 5 minutos sale en la web. Si te equivocas, vuelve a enviarlo y vale el último.
+>
+> Consejo: guarda el enlace en la pantalla de inicio del móvil (en Chrome, menú ⋮ → «Añadir a pantalla de inicio») y lo tendrás como una app.
+
+## Cómo se comporta la web
+
+- Muestra **solo el envío de hoy**. Si hoy aún no han enviado nada, no enseña el menú de ayer: dice que aún no se ha subido y manda a las historias de Instagram o a llamar.
+- Si el menú no cabe en el posavasos, el posavasos lleva a la sección grande «Menú del día».
+- Los **martes** (cerrado) avisa solo de que descansan.
 - Los cambios tardan unos **5 minutos** en verse, porque Google tarda en refrescar la hoja publicada.
-- Los martes la web dice sola que descansan. No hace falta tocar nada.
 
-## Si no se usa la hoja
+## Si no se usa el formulario
 
-Mientras `menuSheetCsv` esté vacío, la web lee `menu-del-dia/hoy.json`, que ahora está vacío. En ese caso, el posavasos del menú anuncia que hay menú cada día y manda a las historias de Instagram o a llamar.
+Mientras `menuSheetCsv` esté vacío, la web lee `menu-del-dia/hoy.json`. También sigue funcionando el formato antiguo de hoja con columnas «tipo / plato» (ver `plantilla-hoja.csv`).
