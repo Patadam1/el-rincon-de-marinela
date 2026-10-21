@@ -995,6 +995,12 @@
   // cuando ya está montada la carta; el navegador saltaría antes de tiempo.
   if (location.hash.length > 1) {
     const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: "instant" }));
+    if (target) {
+      const jump = () => target.scrollIntoView({ behavior: "instant" });
+      jump();
+      const y = scrollY;
+      // al terminar de cargar las fotos la página puede moverse: recolocar si el visitante no ha tocado nada
+      addEventListener("load", () => { if (Math.abs(scrollY - y) < 40) jump(); }, { once: true });
+    }
   }
 })();
