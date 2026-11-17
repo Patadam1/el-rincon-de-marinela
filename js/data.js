@@ -203,6 +203,12 @@ window.CARTA = [
     ]
   },
   {
+    id: "almuerzos", nombre: "Almuerzos", sub: "Plato combinado y bebida", origen: "casa",
+    items: [
+      ["Plato combinado + bebida", 7.5, "", ["reco"]]
+    ]
+  },
+  {
     id: "cafes", nombre: "Cafés y zumos", sub: "", origen: "casa",
     items: [
       ["Café solo", 1.3], ["Americano", 1.3], ["Cortado", 1.3], ["Café con leche", 1.5], ["Infusiones", 1.5],
